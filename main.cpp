@@ -4,6 +4,10 @@ int main() {
   i_bitset set;
   set = 176; // = operator is overloaded
   std::cout << set << std::endl; // << operator is overloaded
+	i_bitset k;
+	k = 176;
+	std::cout << (set == 420) << std::endl;
+	std::cout << (set == k) << std::endl;
 
   c_bitset character;
   character = 'k';
