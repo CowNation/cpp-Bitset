@@ -8,6 +8,8 @@ class i_bitset : public bitset {
   friend std::ostream & operator<<(std::ostream & _stream, i_bitset const & mc);
   operator int() const;
   int operator=(const int& b);
+	bool operator==(const i_bitset& b);
+	bool operator==(const int& b);
 };
 
 i_bitset Integer(int i);
