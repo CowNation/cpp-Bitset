@@ -43,3 +43,11 @@ int i_bitset::operator=(const int& b) {
   }
   return b;
 }
+
+bool i_bitset::operator==(const i_bitset& b){
+  return (int)b == pGet();
+}
+
+bool i_bitset::operator==(const int& b){
+  return b == pGet();
+}
