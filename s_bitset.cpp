@@ -26,12 +26,14 @@ void s_bitset::Append(s_bitset String) {
       Chars.push_back(String.Chars[i]);
 }
 void s_bitset::Append(char character){
-  c_bitset letter = ASCII(character);
+  c_bitset letter;
+	letter = letter.ASCII(character);
   Append(letter);
 }
 void s_bitset::Append(std::string String){
   for (int i = 0; i < String.length(); i++){
-    c_bitset letter = ASCII(String.at(i));
+    c_bitset letter;
+		letter = letter.ASCII(String.at(i));
     Append(letter);
   }
 }
