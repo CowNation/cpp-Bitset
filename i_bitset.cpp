@@ -24,15 +24,16 @@ void checkValue(double& iLetter, i_bitset& integer, double Num, int Index){
 i_bitset i_bitset::Integer(double i){
   i_bitset integer;
   while (i > 0){
-		for (int k = 1; k < 33; k++)
-			checkValue(i, integer, GetValue(32 - k), 32 - k);
+    for (int k = 1; k < SIZE+1; k++){
+      checkValue(i, integer, GetValue(SIZE - k), SIZE - k);
+    }
   }
   return integer;
 }
 
 double i_bitset::operator=(const double& b) {
   i_bitset integer = Integer(b);
-  for (int i = 0; i < 32; i++){
+  for (int i = 0; i < SIZE; i++){
     setbit(i, integer.getbit(i));
   }
   return b;
@@ -45,3 +46,4 @@ bool i_bitset::operator==(const i_bitset& b){
 bool i_bitset::operator==(const int& b){
   return b == pGet();
 }
+
