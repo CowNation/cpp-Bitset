@@ -2,14 +2,13 @@
 
 class i_bitset : public bitset {
   private:
-  int pGet() const;
+  double pGet() const;
+	i_bitset Integer(double i);
   public:
-  i_bitset() : bitset(8){}
+  i_bitset() : bitset(32){}
   friend std::ostream & operator<<(std::ostream & _stream, i_bitset const & mc);
   operator int() const;
-  int operator=(const int& b);
+  double operator=(const double& b);
 	bool operator==(const i_bitset& b);
 	bool operator==(const int& b);
 };
-
-i_bitset Integer(int i);
