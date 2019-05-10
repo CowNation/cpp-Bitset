@@ -24,10 +24,8 @@ void checkValue(double& iLetter, i_bitset& integer, double Num, int Index){
 i_bitset i_bitset::Integer(double i){
   i_bitset integer;
   while (i > 0){
-		for (int k = 1; k < 33; k++){
-			std::cout << "checkValue(" << i << "," << integer << "," << GetValue(32 - k) << "," << 32-k << ");\n";
+		for (int k = 1; k < 33; k++)
 			checkValue(i, integer, GetValue(32 - k), 32 - k);
-		}
   }
   return integer;
 }
