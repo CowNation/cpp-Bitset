@@ -1,5 +1,5 @@
 # cpp-Bitset
-A program containing several different bitset classes including chars, strings, ints and a base bitset class
+A program containing several different bitset/bool pointer based classes including chars, strings, ints and a base bitset class
 ## Classes
 This program contains 4 main classes which are reliant on each other.
 
