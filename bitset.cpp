@@ -10,6 +10,6 @@ bool bitset::getbit(int Index){
   return BitSet[Index];
 }
 void bitset::print(){
-  for (int i = 0; i < BitSet.size(); i++)
+  for (int i = 0; i < sizeof(BitSet) / sizeof(bool); i++)
     std::cout << BitSet[i] << "/" << GetValue(i) << " ";
 }
