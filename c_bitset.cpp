@@ -6,20 +6,25 @@ void checkValue(int& iLetter, c_bitset& character, int Num, int Index){
     iLetter -= Num;
   }
 }
-c_bitset c_bitset::ASCII(char letter){
+c_bitset ASCII(char letter){
   int iLetter = (int)letter;
   c_bitset character;
   while (iLetter > 0) {
-		for (int k = 1; k < 9; k++){
-      checkValue(iLetter, character, GetValue(8 - k), 8 - k);
-    }
+    checkValue(iLetter, character, 128, 7);
+    checkValue(iLetter, character, 64, 6);
+    checkValue(iLetter, character, 32, 5);
+    checkValue(iLetter, character, 16, 4);
+    checkValue(iLetter, character, 8, 3);
+    checkValue(iLetter, character, 4, 2);
+    checkValue(iLetter, character, 2, 1);
+    checkValue(iLetter, character, 1, 0);
   }
   return character;
 }
 
 char c_bitset::pGet() const {
   int decimal = 0;
-  for (int i = 0; i < BitSet.size(); i++)
+  for (int i = 0; i < sizeof(BitSet) / sizeof(bool); i++)
     decimal += BitSet[i] * GetValue(i);
   return (char)decimal;
 }
