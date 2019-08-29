@@ -5,10 +5,12 @@
 
 class bitset {
   protected:
-  std::vector< bool >BitSet;
+  bool* BitSet;
   double GetValue(int Index) const;
   public:
-  bitset(int bits, bool initialValue = false) : BitSet(bits, initialValue){}
+  bitset(int bits, bool initialValue = false){
+		BitSet = new bool[bits];
+	}
   void setbit(int Index, bool Value);
   bool getbit(int Index);
   void print();
