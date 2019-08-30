@@ -1,4 +1,5 @@
 #include "s_bitset.h"
+#include <bits/stdc++.h> 
 
 std::string s_bitset::pGet() const {
   std::string ret;
@@ -18,14 +19,18 @@ void s_bitset::resize(int newSz) {
   }
 }
 std::string s_bitset::toBinary(){
-	std::string Binary;
-	for (int i = 0; i < Chars.size(); i++){
-		for (int b = 0; b < sizeof(Chars[i].BitSet) / sizeof(bool); b++){
-			Binary += std::to_string(Chars[i].BitSet[b]);
-		}
-		Binary += " ";
-	}
-	return Binary;
+  std::string Binary;
+  for (int i = 0; i < Chars.size(); i++){
+    std::string Word = "";
+    for (int b = 0; b < sizeof(Chars[i].BitSet) / sizeof(bool); b++)
+      Word += std::to_string(Chars[i].BitSet[b]);
+	  
+    int n = Word.length(); 
+    for (int i = 0; i < n / 2; i++) 
+      std::swap(Word[i], Word[n - i - 1]); 
+    Binary += Word + " ";
+  }
+  return Binary;
 }
 void s_bitset::Append(c_bitset Character) {
   Chars.push_back(Character);
