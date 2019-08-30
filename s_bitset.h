@@ -15,6 +15,7 @@ class s_bitset {
   std::string operator=(const std::string& b);
   bool operator==(const std::string& b);
   std::string operator+(const char* b);
+  std::string toBinary();
   c_bitset& at(int index);
   int length();
   friend std::ostream & operator<<(std::ostream& _stream, s_bitset const & mc);
