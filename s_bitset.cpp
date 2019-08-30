@@ -17,6 +17,16 @@ void s_bitset::resize(int newSz) {
     Chars.resize(newSz);
   }
 }
+std::string s_bitset::toBinary(){
+	std::string Binary;
+	for (int i = 0; i < Chars.size(); i++){
+		for (int b = 0; b < sizeof(Chars[i].BitSet) / sizeof(bool); b++){
+			Binary += std::to_string(Chars[i].BitSet[b]);
+		}
+		Binary += " ";
+	}
+	return Binary;
+}
 void s_bitset::Append(c_bitset Character) {
   Chars.push_back(Character);
 }
