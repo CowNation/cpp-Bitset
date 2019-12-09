@@ -1,38 +1,38 @@
 #include "s_bitset.h"
 
 int main() {
-  i_bitset set;
-  set = 176; // = operator is overloaded
-  std::cout << set << std::endl; // << operator is overloaded
+	i_bitset set;
+	set = 176; // = operator is overloaded
+	std::cout << set << std::endl; // << operator is overloaded
 	i_bitset k;
 	k = 176;
 	std::cout << (set == 420) << std::endl;
 	std::cout << (set == k) << std::endl;
 
-  c_bitset character;
-  character = 'k';
-  std::cout << character << std::endl;
+	c_bitset character;
+	character = 'k';
+	std::cout << character << std::endl;
 
-  s_bitset ree;
-  ree.Append(character);
-  ree.Append("k");
+	s_bitset ree;
+	ree.Append(character);
+	ree.Append("k");
 
-  s_bitset xd;
-  xd = ree + " xd";
+	s_bitset xd;
+	xd = ree + " xd";
 
-  std::cout << xd << std::endl;
+	std::cout << xd << std::endl;
 
-  s_bitset jeff;
-  jeff = "Jeff"; // = operator is overloaded
+	s_bitset jeff;
+	jeff = "Jeff"; // = operator is overloaded
 
-  std::cout << jeff + " _--" << std::endl; // << and + operator are overloaded
-  for (int i = 0; i < jeff.length(); i++){
-    jeff.at(i).print();
-    std::cout << std::endl;
-  }
+	std::cout << jeff + " _--" << std::endl; // << and + operator are overloaded
+	for (int i = 0; i < jeff.length(); i++){
+		jeff.at(i).print();
+		std::cout << std::endl;
+	}
 
-  s_bitset st;
+	s_bitset st;
 	std::cout << "Enter string: ";
-  std::cin >> st;
-  std::cout << st << std::endl;
+	std::cin >> st;
+	std::cout << st << std::endl;
 }
